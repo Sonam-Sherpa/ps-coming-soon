@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex" />
+  <meta name="theme-color" content="#0b6cf2" />
+  <title>Coming soon - ParkStrata</title>
+  <style>
+    :root {
+      --radius-xl: 24px;
+      --radius-lg: 16px;
+      --radius: 12px;
+      --radius-pill: 999px;
+      --ink: #0f172a;
+      --text: #1e293b;
+      --text-muted: #64748b;
+      --border: #e8edf3;
+      --surface: #ffffff;
+      --surface-soft: #f8fafc;
+      --primary: #0b6cf2;
+      --primary-ink: #0a4fb0;
+      --accent: #14b8a6;
+      --shadow: 0 24px 60px -20px rgba(11, 38, 78, .45);
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text);
+      line-height: 1.6;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      background:
+        radial-gradient(1100px 600px at 85% -10%, rgba(20, 184, 166, .45), transparent 60%),
+        radial-gradient(900px 600px at 0% 110%, rgba(11, 108, 242, .55), transparent 55%),
+        linear-gradient(135deg, #0b6cf2 0%, #0e7ad1 45%, #14b8a6 100%);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .card {
+      position: relative;
+      background: var(--surface);
+      width: 100%;
+      max-width: 500px;
+      border-radius: var(--radius-xl);
+      padding: 2.5rem 2.25rem 2rem;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+    }
+    .logo { width: 42px; height: 42px; flex-shrink: 0; }
+    .brand-name {
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: -.01em;
+      margin: 0;
+      line-height: 1.1;
+      color: var(--ink);
+    }
+    .tagline {
+      color: var(--text-muted);
+      margin: .6rem 0 0;
+      font-size: .92rem;
+    }
+
+    .divider {
+      height: 1px;
+      background: var(--border);
+      margin: 1.75rem 0;
+    }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .4rem .85rem;
+      border-radius: var(--radius-pill);
+      background: rgba(20, 184, 166, .1);
+      color: #0f766e;
+      font-size: .76rem;
+      font-weight: 600;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+    .status__dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 0 rgba(20, 184, 166, .5);
+      animation: pulse 2.2s ease-out infinite;
+    }
+    @keyframes pulse {
+      0%   { box-shadow: 0 0 0 0 rgba(20, 184, 166, .5); }
+      70%  { box-shadow: 0 0 0 7px rgba(20, 184, 166, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(20, 184, 166, 0); }
+    }
+
+    .headline {
+      font-size: 2.1rem;
+      line-height: 1.15;
+      letter-spacing: -.02em;
+      font-weight: 700;
+      color: var(--ink);
+      margin: 1rem 0 .65rem;
+    }
+    .lead {
+      color: var(--text-muted);
+      font-size: 1rem;
+      margin: 0;
+      max-width: 42ch;
+    }
+
+    .features {
+      list-style: none;
+      margin: 1.75rem 0 0;
+      padding: 0;
+      display: grid;
+      gap: .75rem;
+    }
+    .feature {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      font-size: .94rem;
+      color: var(--text);
+    }
+    .feature__icon {
+      flex-shrink: 0;
+      width: 36px;
+      height: 36px;
+      display: grid;
+      place-items: center;
+      border-radius: 10px;
+      background: var(--surface-soft);
+      border: 1px solid var(--border);
+      color: var(--primary);
+    }
+    .feature__icon svg { width: 18px; height: 18px; }
+
+    .contact {
+      margin-top: 1.75rem;
+      padding: 1.25rem;
+      border-radius: var(--radius);
+      background: var(--surface-soft);
+      border: 1px solid var(--border);
+    }
+    .contact h2 {
+      margin: 0 0 .2rem;
+      font-size: .95rem;
+      font-weight: 700;
+      color: var(--ink);
+    }
+    .contact p {
+      margin: 0 0 .85rem;
+      font-size: .86rem;
+      color: var(--text-muted);
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .7rem 1.15rem;
+      border-radius: 10px;
+      background: var(--primary);
+      color: #fff;
+      font-size: .9rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background .15s ease, transform .15s ease;
+    }
+    .btn:hover { background: var(--primary-ink); }
+    .btn:active { transform: translateY(1px); }
+    .btn svg { width: 16px; height: 16px; }
+
+    .foot {
+      margin-top: 1.75rem;
+      text-align: center;
+      font-size: .8rem;
+      color: var(--text-muted);
+    }
+
+    a:focus-visible,
+    .btn:focus-visible {
+      outline: 2px solid var(--primary);
+      outline-offset: 2px;
+      border-radius: 6px;
+    }
+
+    @media (max-width: 480px) {
+      .card { padding: 2rem 1.4rem 1.6rem; border-radius: var(--radius-lg); }
+      .headline { font-size: 1.75rem; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .status__dot { animation: none; }
+      .btn { transition: none; }
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <div class="brand">
+      <svg class="logo" aria-hidden="true" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+        <rect width="48" height="48" rx="10" fill="#0f172a" />
+        <rect x="4" y="4" width="12" height="9" rx="1" fill="#f87171" />
+        <rect x="17" y="4" width="12" height="9" rx="1" fill="#10b981" />
+        <rect x="30" y="4" width="14" height="9" rx="1" fill="#f59e0b" />
+        <rect x="4" y="14" width="12" height="9" rx="1" fill="#10b981" />
+        <rect x="30" y="14" width="14" height="9" rx="1" fill="#f87171" />
+        <rect x="17" y="14" width="12" height="9" rx="1" fill="none" stroke="#1e293b" stroke-width="1.2" />
+        <rect x="4" y="24" width="12" height="9" rx="1" fill="#f59e0b" />
+        <rect x="17" y="24" width="12" height="9" rx="1" fill="#f87171" />
+        <rect x="30" y="24" width="14" height="9" rx="1" fill="#10b981" />
+        <rect x="4" y="34" width="12" height="10" rx="1" fill="#f87171" />
+        <rect x="17" y="34" width="12" height="10" rx="1" fill="none" stroke="#1e293b" stroke-width="1.2" />
+        <rect x="30" y="34" width="14" height="10" rx="1" fill="none" stroke="#1e293b" stroke-width="1.2" />
+      </svg>
+      <h1 class="brand-name">ParkStrata</h1>
+    </div>
+    <p class="tagline">Smart visitor parking for strata buildings</p>
+
+    <div class="divider"></div>
+
+    <span class="status"><span class="status__dot" aria-hidden="true"></span> Launching soon</span>
+
+    <h2 class="headline">We're almost ready</h2>
+    <p class="lead">
+      ParkStrata is on its way - a simpler way for managers, owners and residents
+      to handle visitor parking. We're putting the finishing touches on it now.
+    </p>
+
+    <ul class="features">
+      <li class="feature">
+        <span class="feature__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="4" width="18" height="18" rx="2" /><path d="M16 2v4M8 2v4M3 10h18" />
+          </svg>
+        </span>
+        Effortless visitor bookings for residents
+      </li>
+      <li class="feature">
+        <span class="feature__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="7" height="7" rx="1" /><rect x="14" y="3" width="7" height="7" rx="1" /><rect x="3" y="14" width="7" height="7" rx="1" /><path d="M14 14h3v3M21 21v.01M17 21v.01M21 17v.01" />
+          </svg>
+        </span>
+        Secure, contactless QR check-in
+      </li>
+      <li class="feature">
+        <span class="feature__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 3v18h18" /><rect x="7" y="12" width="3" height="6" /><rect x="13" y="8" width="3" height="10" /><rect x="19" y="5" width="0" height="0" />
+          </svg>
+        </span>
+        Fair quota control and clear oversight
+      </li>
+    </ul>
+
+    <div class="contact">
+      <h2>Get in touch</h2>
+      <p>For early access, a demo or general enquiries, we'd love to hear from you.</p>
+      <a class="btn" href="mailto:hello@parkstrata.com.au">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="2" y="4" width="20" height="16" rx="2" /><path d="m22 7-10 6L2 7" />
+        </svg>
+        hello&#64;parkstrata.com.au
+      </a>
+    </div>
+
+    <p class="foot">&copy; <span id="year"></span> ParkStrata. All rights reserved.</p>
+  </main>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
